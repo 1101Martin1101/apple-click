@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- sets width to device width, and initial zoom level -->
+    <title>Apple click</title> <!-- title of page on tab -->
+    <link href="style.css" rel="stylesheet" type="text/css"/> <!-- links the CSS -->
+		<link rel="icon" type="image/png" sizes="32x32" href="Images/favicon.png"> <!-- favicon -->
+  </head>
+  
+	<body>
+		<script src="script.js"></script> <!-- links the JS -->
+
+		<center> <!-- makes all the content centered -->
+			<img src="Images/clickButton.png" id="clickButton" onclick="increment()"> <!-- the image you have to click -->
+
+			<div id="info"> <!-- contains the info (view below), in <span> tags because they constantly evolve -->
+				<p id="appleCounter">Apples = <span id="showApples" class="number">0</span></p> <!-- shows number of apples -->
+
+				<p>Apples per second = <span id="showApplesPerSecond" class="number">0</span></p> <!-- shows apples per second -->
+
+				<p>Apples per click = <span id="showApplesPerClick" class="number">1</span></p> <!-- shows apples per click -->
+
+				<p id="gameOver"></p> <!-- for text to appear when you win -->
+			</div>
+			
+			<!-- Items that can be bought -->
+			<div class="itemContainer"> <!-- contains 4 items that you can buy -->
+				<div class="item"> <!-- an item -->
+					<div class="containerImage"> <!-- contains image -->
+						<img src="Images/Items/iPhone.webp" id="iPhoneImage" class="itemImage" style="width:100px;height:170px;">
+
+						<div class="buyButtonContainer"> <!-- contains button to buy item -->
+							<button onclick="buyIPhone()" class="buyButton">Buy</button>
+						</div>
+					</div>
+
+					<div class="containerText"> <!-- contains stats about item -->
+						<p>iPhones: <span id="iPhoneNum">0</span></p>
+
+						<p>iPhone cost: <span id="iPhoneCost">10</span></p>
+
+						<p>+1 Apples per second</p>
+					</div>
+				</div>
+
+				<div class="item"> <!-- an item -->
+					<div class="containerImage"> <!-- contains image -->
+						<img src="Images/Items/iPad.png" id="iPadImage" class="itemImage" style="width:140px;height:180px;">
+
+						<div class="buyButtonContainer"> <!-- contains button to buy item -->
+							<button onclick="buyIPad()" class="buyButton">Buy</button>
+						</div>
+					</div>
+
+					<div class="containerText"> <!-- contains stats about item -->
+						<p>iPads:  <span id="iPadNum">0</span></p>
+
+						<p>iPad cost: <span id="iPadCost">10</span></p>
+
+						<p>+1 Apples per click</p>
+					</div>
+				</div>
+
+				<div class="item"> <!-- an item -->
+					<div class="containerImage"> <!-- contains image -->
+						<img src="Images/Items/pen.webp" id="penImage" class="itemImage" style="width:150px;height:180px">
+				
+						<div class="buyButtonContainer"> <!-- contains button to buy item -->
+							<button onclick="buyPen()" class="buyButton">Buy</button>
+						</div>
+					</div>
+
+					<div class="containerText"> <!-- contains stats about item -->
+						<p>Apple Pens:  <span id="penNum">0</span></p>
+
+						<p>Apple Pen cost: <span id="penCost">200</span></p>
+
+						<p>+100 Apples per second</p>
+					</div>
+				</div>
+				
+				<div class="item"> <!-- an item -->
+					<div class="containerImage"> <!-- contains image -->
+						<img src="Images/Items/airPods.webp" class="itemImage" style="width:180px;height:180px">
+						
+						<div class="buyButtonContainer"> <!-- contains button to buy item -->
+							<button onclick="buyAirPods()" class="buyButton">Buy</button>
+						</div>
+					</div>
+
+					<div class="containerText"> <!-- contains stats about item -->
+						<p>AirPods: <span id="airPodsNum">0</span></p>
+
+						<p>AirPods cost: <span id="airPodsCost">500</span></p>
+
+						<p>+100 Apples per click</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="itemContainer"> <!-- contains 4 items that you can buy -->
+				<div class="item"> <!-- an item -->
+					<div class="containerImage"> <!-- contains image -->
+						<img src="Images/Items/mac.png" class="itemImage" style="width:340px;height:180px">
+						
+						<div class="buyButtonContainer"> <!-- contains button to buy item -->
+							<button onclick="buyMac()" class="buyButton">Buy</button>
+						</div>
+					</div>
+
+					<div class="containerText">
+						<p>Macs:  <span id="macNum">0</span></p>
+
+						<p>Mac cost: <span id="macCost">10,000</span></p>
+
+						<p>+1000 Apples per second</p>
+					</div>
+				</div>
+
+				<div class="item"> <!-- an item -->
+					<div class="containerImage"> <!-- contains image -->
+						<img src="Images/Items/iMac.png" id="iMacImage" class="itemImage" style="width:200px;height:180px">
+
+						<div class="buyButtonContainer"> <!-- contains button to buy item -->
+							<button onclick="buyIMac()" class="buyButton">Buy</button>
+						</div>
+					</div>
+
+					<div class="containerText"> <!-- contains stats about item -->
+						<p>iMacs:  <span id="iMacNum">0</span></p>
+
+						<p>iMac cost: <span id="iMacCost">1,000,000</span></p>
+
+						<p>+10,000 Apples per click</p>
+					</div>
+				</div>
+
+				<div class="item"> <!-- makes item go to right -->
+					<div class="containerImage"> <!-- contains image -->
+						<img src="Images/Items/appleStore.jpg" class="itemImage" style="width:290px;height:180px">
+						
+						<div class="buyButtonContainer"> <!-- contains button to buy item -->
+							<button onclick="buyAppleStore()" class="buyButton">Buy</button>
+						</div>
+					</div>
+
+					<div class="containerText"> <!-- contains stats about item -->
+						<p>Apple Stores:  <span id="appleStoreNum">0</span></p>
+
+						<p>Apple Store cost: <span id="appleStoreCost">10,000,000</span></p>
+
+						<p>+100,000 per second</p>
+					</div>
+				</div>
+
+				<div class="item"> <!-- an item -->
+					<div class="containerImage">
+
+						<div class="container">
+							<img src="Images/Items/steveJobs.png" class="itemImage" style="width:300px;height:180px">
+						
+							<div class="buyButtonContainer"> <!-- contains button to buy item -->
+								<button onclick="buySteveJobs()" class="buyButton">Buy</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="containerText"> <!-- contains stats about item -->
+						<p>Steve Jobs:  <span id="steveJobsNum">0</span></p>
+
+						<p>Steve Jobs cost: <span id="steveJobsCost">1,000,000,000</span></p>
+
+						<p>+1,000,000 Apples per click</p>
+					</div>
+				</div>
+			</div>
+		</center>
+  </body>
+</html>
