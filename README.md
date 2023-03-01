@@ -1,7 +1,7 @@
 # apple-click
 Web Browser Game
 
- After downloading, you need to unzip the image file: [file](Images.rar)
+ After downloading, you need to unzip the image file: [Images.rar](Images.rar)
 
  Web: [link](https://apple-click.4fan.cz)
 
